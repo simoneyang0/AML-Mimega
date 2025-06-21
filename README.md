@@ -6,6 +6,7 @@ https://cernbox.cern.ch/rootjs/public/mFmKHpc4psg1H6b/data24_13p6TeV.00484074.ph
 
 Modello GNN per predire tracce di muoni all'interno della "small wheel" di ATLAS
 
-########### MIMEGA ###########
-Modello GNN per predire cluster di muoni all'interno di una singola camera micromegas
 
+########### MIMEGA ###########
+
+Modello GNN per predire cluster di muoni all'interno di una singola camera micromegas
