@@ -1,3 +1,8 @@
+I dati originali sono in formato .root, vengono processati da "data_processing.ipynb" e vengono salvati in formato .npy. 
+Per funzionare i codici "atlas,ipynb" e "mimega_single.ipynb", i quali contengono il training e la valutazione delle reti neurali, hanno bisogno solo dei .npy.
+
+Per motivi di spazio ho caricato solo i dati in formato .npy già processati in una cartella .zip.
+
 ########### ATLAS ###########
 
 Processa i dati (8.6 Gb):
