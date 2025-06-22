@@ -10,11 +10,13 @@ Vengono passati al modello i parametri:
 
 - carica totale in un cluster, 
 
-- tempo del cluster (media sui tempi delle strip accese nel cluster), 
+- tempo del cluster (media pesata sui tempi delle strip in un cluster), 
 
-- posizione locale lungo la direzione x di un cluster (media sulle x delle strip accese nel cluster), 
+- posizione locale lungo la direzione x di un cluster (media pesata sulle x delle strip in un cluster), 
 
 - numero di strip accese in un cluster.
+
+Ad ogni cluster viene associato un nodo e i collegamenti tra questi sono stati ottenuti con un k-NearestNeighbors.
 
 Labels:
 
@@ -23,6 +25,8 @@ Labels:
 
 - rumore: ad ogni evento Atlas salva inoltre i dati di un settore dove non è passato un muone in modo casuale (mmPRDRandomSectorDumped),
   a questi viene assegnato una label 0.
+
+Il modello impara ad essegnare una label 1 ai cluster di muoni.
 
 Struttura small wheel Atlas:
 
@@ -33,3 +37,14 @@ A causa della geometria e della posizione delle camere, per una maggiore consist
 ########### MIMEGA ###########
 
 Modello GNN per predire cluster di muoni all'interno di una singola camera micromegas
+
+La camera è composta da 360 strip e a ognuna di queste è associata una carica.
+Ogni strip è considerata come un nodo, collegato solo con le altre strip adiacenti.
+
+Viene dunque fatto passare nel modello solo l'informazione sulla carica di ogni strip.
+
+I dati sono divisi in acquisizioni fatti con un trigger interno ed uno esterno. 
+Nel primo caso questi sono considerati tutti strip di rumore e quindi viene assegnata una label 0 a tutte le strip.
+Nel secondo caso viene usato un algoritmo classico per individuare i cluster associati ai muoni, viene assegnato una label 1 alle strip appartenenti a questi cluster e 0 alle restanti strip.
+
+Il modello impara ad assegnare una label 1 alle strip associati ai cluster dei muoni.
