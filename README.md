@@ -49,7 +49,7 @@ Ogni strip è considerata come un nodo, collegato solo con le altre strip adiace
 Viene dunque fatto passare nel modello solo l'informazione sulla carica di ogni strip.
 
 I dati sono divisi in acquisizioni fatti con un trigger interno ed uno esterno. 
-Nel primo caso questi sono considerati tutti strip di rumore e quindi viene assegnata una label 0 a tutte le strip.
-Nel secondo caso viene usato un algoritmo classico per individuare i cluster associati ai muoni, viene assegnato una label 1 alle strip appartenenti a questi cluster e 0 alle restanti strip.
+Vengono considerati solo eventi appartenenti al secondo caso, e viene usato un algoritmo classico per individuare i cluster associati ai muoni.
+Viene assegnato dunque una label 1 alle strip appartenenti ai cluster e 0 alle restanti strip.
 
 Il modello impara ad assegnare una label 1 alle strip associati ai cluster dei muoni.
